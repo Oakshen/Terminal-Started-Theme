@@ -21,7 +21,7 @@ A customized terminal startup theme that displays colorful ASCII art and system 
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/Terminal-Started-Theme.git
+git clone https://github.com/Oakshen/Terminal-Started-Theme
 ```
 
 2. Choose your preferred setup and copy the corresponding code:
