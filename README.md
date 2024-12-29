@@ -32,7 +32,9 @@ Add your chosen section to your shell configuration file:
 ```bash
 # For zsh users
 cat YOUR_CHOSEN_SECTION >> ~/.zshrc
+```
 
+```bash
 # For bash users
 cat YOUR_CHOSEN_SECTION >> ~/.bashrc
 ```
@@ -52,7 +54,6 @@ sudo apt-get install lolcat figlet
 - Zsh shell or Bash shell
 - lolcat package
 - figlet package
-- SSH connection (theme only displays when connecting via SSH)
 
 ## 📄 License
 
