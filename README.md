@@ -25,8 +25,8 @@ git clone https://github.com/Oakshen/Terminal-Started-Theme
 ```
 
 2. Choose your preferred setup and copy the corresponding code:
-- For SSH connections only: Copy the "SSH-only" section from `.zshrc`
-- For all terminal sessions: Copy the "ALL Terminal Theme" section from `.zshrc`
+- For SSH connections only: Copy the "SSH-only" section from `zshrc`
+- For all terminal sessions: Copy the "ALL Terminal Theme" section from `zshrc`
 
 Add your chosen section to your shell configuration file:
 ```bash
