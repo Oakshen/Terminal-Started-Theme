@@ -38,10 +38,10 @@ fi
 upDays=$(awk '{print int($1/86400)}' /proc/uptime)
 
 # 4) CPU 型号 & 核心数
-cpuModel=$(awk -F': +' '/^model name/{print $2; exit}' /proc/cpuinfo | sed -E 's/.*Intel.*Core.*i([357])-([0-9]+[A-Z]*).*/Intel \2/;s/.*AMD.*Ryzen.*([0-9]+ [0-9]+[A-Z]*).*/AMD \1/')
-[ -z "$cpuModel" ] && cpuModel=$(awk -F': +' '/^Hardware/{print $2; exit}' /proc/cpuinfo)
-cpuCores=$(awk -F': +' '/^processor/{count++} END{print count}' /proc/cpuinfo)
-[ -z "$cpuCores" ] && cpuCores=1
+cpuModel=$(awk -F': +' '/^model name/{print $2; exit}' /proc/cpuinfo | sed -E 's/.*Intel.*Core.*(i[357])-([0-9]+[A-Z]*).*/Intel \1-\2/;s/.*AMD.*Ryzen.*([0-9]+ [0-9]+[A-Z]*).*/AMD \1/')
+    [ -z "$cpuModel" ] && cpuModel=$(awk -F': +' '/^Hardware/{print $2; exit}' /proc/cpuinfo)
+    cpuCores=$(awk -F': +' '/^processor/{count++} END{print count}' /proc/cpuinfo)
+    [ -z "$cpuCores" ] && cpuCores=1
 # 定义颜色
 GREEN="\033[32m"
 RESET="\033[0m"
