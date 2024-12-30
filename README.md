@@ -8,14 +8,14 @@ A customized terminal startup theme that displays colorful ASCII art and system 
 
 - Rainbow ASCII art welcome banner
 - System information display including:
-    - System load
+    - System load (as CPU usage percentage)
     - Memory usage
     - System uptime
     - CPU model and cores
 
 ## 📸 Preview
 
-![Preview](Pic1.png)
+![Preview](Pic.png)
 
 ## 🚀 Installation
 
@@ -24,19 +24,26 @@ A customized terminal startup theme that displays colorful ASCII art and system 
 git clone https://github.com/Oakshen/Terminal-Started-Theme
 ```
 
-2. Choose your preferred setup and copy the corresponding code:
-- For SSH connections only: Copy the "SSH-only" section from `zshrc`
-- For all terminal sessions: Copy the "ALL Terminal Theme" section from `zshrc`
+2. Choose your preferred setup:
 
-Add your chosen section to your shell configuration file:
+### Option A: SSH connections only
+Copy the content from `zshrc_ssh_only` to your shell configuration file:
 ```bash
 # For zsh users
-cat YOUR_CHOSEN_SECTION >> ~/.zshrc
+cat zshrc_ssh_only >> ~/.zshrc
+
+# For bash users
+cat zshrc_ssh_only >> ~/.bashrc
 ```
 
+### Option B: All terminal sessions
+Copy the content from `zshrc_all_terminal` to your shell configuration file:
 ```bash
+# For zsh users
+cat zshrc_all_terminal >> ~/.zshrc
+
 # For bash users
-cat YOUR_CHOSEN_SECTION >> ~/.bashrc
+cat zshrc_all_terminal >> ~/.bashrc
 ```
 
 3. Install required dependencies:
@@ -45,9 +52,10 @@ cat YOUR_CHOSEN_SECTION >> ~/.bashrc
 sudo apt-get install lolcat figlet
 ```
 
-💡 **Tip**: You can customize the rainbow text effect by modifying lolcat parameters, for example: `lolcat -f -F 0.5` will change the speed and frequency of color transitions.
-💡 **Tip**: You can use `figlet` command to generate ASCII text art banners with different fonts. Try `figlet -f slant "Your Text"` to create similar ASCII art.
-💡 **Tip**: Alternatively, you can generate ASCII art without figlet using the online tool [ASCII-generator](https://github.com/vietnh1009/ASCII-generator).
+💡 **Tips**: 
+- Customize the rainbow text effect by modifying lolcat parameters: `lolcat -f -F 0.5`
+- Generate different ASCII text art using `figlet`: `figlet -f slant "Your Text"`
+- Create ASCII art without figlet using [ASCII-generator](https://github.com/vietnh1009/ASCII-generator)
 
 ## 💡 Requirements
 
