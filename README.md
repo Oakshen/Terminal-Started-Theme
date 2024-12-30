@@ -15,7 +15,7 @@ A customized terminal startup theme that displays colorful ASCII art and system 
 
 ## 📸 Preview
 
-![Preview](Pic.png)
+![Preview](Pic2.png)
 
 ## 🚀 Installation
 
