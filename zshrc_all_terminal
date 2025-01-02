@@ -14,6 +14,10 @@ cat << "EOF" | lolcat --spread=2 --freq=0.2 --seed=123
 EOF
 
 # ---------- (2) 系统信息 (四列，无IP/存储) ----------
+# 首先获取 CPU 核心数
+cpuCores=$(awk -F': +' '/^processor/{count++} END{print count}' /proc/cpuinfo)
+[ -z "$cpuCores" ] && cpuCores=1
+
 # 1) 系统负载
 read load1 _ _ < /proc/loadavg
 loadavg=$(awk "BEGIN {printf \"%.0f\", $load1 * 100 / $cpuCores}")"%"
@@ -39,9 +43,8 @@ upDays=$(awk '{print int($1/86400)}' /proc/uptime)
 
 # 4) CPU 型号 & 核心数
 cpuModel=$(awk -F': +' '/^model name/{print $2; exit}' /proc/cpuinfo | sed -E 's/.*Intel.*Core.*(i[357])-([0-9]+[A-Z]*).*/Intel \1-\2/;s/.*AMD.*Ryzen.*([0-9]+ [0-9]+[A-Z]*).*/AMD \1/')
-    [ -z "$cpuModel" ] && cpuModel=$(awk -F': +' '/^Hardware/{print $2; exit}' /proc/cpuinfo)
-    cpuCores=$(awk -F': +' '/^processor/{count++} END{print count}' /proc/cpuinfo)
-    [ -z "$cpuCores" ] && cpuCores=1
+[ -z "$cpuModel" ] && cpuModel=$(awk -F': +' '/^Hardware/{print $2; exit}' /proc/cpuinfo)
+
 # 定义颜色
 GREEN="\033[32m"
 RESET="\033[0m"
